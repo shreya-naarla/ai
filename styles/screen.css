@@ -1,50 +1,97 @@
+/*
+Copilot Model: ChatGPT 4o
+Prompt: create css using this color scheme: https://coolors.co/palette/2c2111-44331a-5c4624-83673f-a9875a-cd9f6e-dcaf85-eac39c-f8d6b3-f7e1be
+Output: Gave me the code below
+*/
+
+/* Color Palette */
+:root {
+  --color1: #7f5539;
+  --color2: #ddb892;
+  --color4: #b08968;
+  --color3: #ede0d4;
+  --color5: #9c6644;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
-    color: #EAE8FF;
-    background: #2D3142;
-    padding: 0 40px;
-    text-align: center;
+  background-color: var(--color3);
+  color: var(--color4);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: var(--color2);
+  color: var(--color1);
+  padding: 20px;
+  text-align: center;
 }
 
 nav {
-    margin: 40px auto 0 auto;
-    width: 250px;
-    border-radius: 50px;
-    background: #212431;
+  background-color: var(--color4); /* Ensure the nav background color is visible */
+  color: var(--color1);
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the nav stays on top of other content */
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
+nav a {
+  color: var(--color1);
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-nav ul li {
-    list-style-type: none;
-    margin: 0;
+nav a:hover {
+  color: var(--color3);
 }
 
-nav ul li a {
-    display: inline-block;
-    padding: 20px;
-    color: #EAE8FF;
-    text-decoration: none;
-    font-size: 1.2em;
+main {
+  background-color: var(--color2);
+  color: var(--color1);
+  padding: 20px;
+  margin-top: 120px;
+  margin-bottom: 120px;
 }
 
-h1 {
-    font-size: 8em;
-    letter-spacing: -2px;
+footer {
+  background-color: var(--color4);
+  color: var(--color1);
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
-h1 strong {
-    background: rgb(34,193,195);
-    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+button {
+  background-color: var(--color5);
+  color: var(--color1);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-img.about {
-    opacity: 0.5;
+button:hover {
+  background-color: var(--color3);
+}
+
+/* Existing card/recipe shape styles */
+.card {
+  background-color: var(--color3); /* Same as recipe background color */
+  color: var(--color4);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.card h2, h3 {
+  color: var(--color1);
+}
+
+.card span {
+    color: var(--color5);
+  }
+
+.card p {
+  color: var(--color5);
 }

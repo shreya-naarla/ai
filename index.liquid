@@ -1,7 +1,72 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: Recipes
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<!--
+Copilot Model: Claude 3.5 Sonnet
+Prompts:
+ - How do I display the recipe information in liquid?
+ - Display the image as well
+ - display the image on the left side of the div, not the top
+ - (The code didnt correctly display the image and I had to repeatedly ask it to fix the error)
+Output: Gave me the code below
+-->
+
+<div class="container mx-auto px-4">
+  <h1 class="text-3xl font-bold mb-6">Recipes</h1>
+  
+  {% for recipe in recipes.recipes %}
+    <article class="mb-8 p-6 rounded-lg shadow-md" style="background-color: var(--color3);">
+      <div class="flex flex-row gap-6">
+        {% if recipe.image %}
+          <div class="w-1/3 flex-none">
+            <img 
+              src="{{ recipe.image }}"
+              alt="Photo of {{ recipe.name }}"
+              class="w-full h-[300px] object-cover rounded-lg"
+              loading="lazy"
+              width="300"
+              height="300"
+            >
+          </div>
+        {% endif %}
+        
+        <div class="flex-1 card">
+          <h2 class="text-2xl font-semibold mb-2">{{ recipe.name }}</h2>
+          
+          <div class="mb-4">
+            <span class="font-bold">Preparation Time:</span> {{ recipe.prepTimeMinutes }} minutes<br>
+            <span class="font-bold">Cooking Time:</span> {{ recipe.cookTimeMinutes }} minutes<br>
+            <span class="font-bold">Servings:</span> {{ recipe.servings }}<br>
+            <span class="font-bold">Difficulty:</span> {{ recipe.difficulty }}
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="font-bold mb-2">Ingredients:</h3>
+            <ul class="list-disc pl-5">
+              {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="font-bold mb-2">Instructions:</h3>
+            <ol class="list-decimal pl-5">
+              {% for instruction in recipe.instructions %}
+                <li>{{ instruction }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+          
+          <div class="text-sm" style="color: var(--color4);">
+            <span class="font-bold">Cuisine:</span> {{ recipe.cuisine }} |
+            <span class="font-bold">Rating:</span> {{ recipe.rating }} |
+            <span class="font-bold">Reviews:</span> {{ recipe.reviewCount }}
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>

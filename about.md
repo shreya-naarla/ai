@@ -1,7 +1,8 @@
 ---
 layout: layout.liquid
-title: About
+title: AI Tool Effectiveness
 ---
 
-# About the 11ty **Boilerplate**
-<img class="about" alt="pine" src="/images/pine.png" width="50" />
+To create this website, I used GitHub Copilot with ChatGPT 4o and Claude 3.5 Sonnet. It was really helpful in showing me how to get information from an API and also provided a good base of starting code to create the website. However, there were many times it gave me code with errors or repeatedly gave me the same code when I provided feedback to fix the error. For example, I had a lot of trouble getting it to create styling in CSS. I gave it the prompt "Create CSS to make the site look better," and it gave me a long page of CSS that made all the elements look exactly the same as they did by default and kept giving me the same code when I asked it to create different styling. I eventually was able to get a different output by specifying a color palette that I wanted by picking one out on Coolors and having it base the CSS on that. Though I did get a better response, I had to do a lot of deleting, adding, and completely rewriting pieces of code within both the Liquid and CSS files for each thing it generated.
+<br><br>
+ChatGPT seemed better than Claude when it came to troubleshooting errors in the terminal and writing HTML/Liquid code. It was also very helpful in explaining how to create and use a JSON file. Claude, however, was better at giving improved responses when I provided feedback on a response I didn't like, and it also gave me better code for CSS. Both models had benefits and drawbacks. In the end, I did end up having to change a lot of the code to make it more how I wanted it to turn out, but the AI was still extremely helpful in learning the process of using APIs. It was also really helpful for getting large chunks of code done quickly and for troubleshooting.

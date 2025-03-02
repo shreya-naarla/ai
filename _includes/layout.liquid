@@ -1,5 +1,5 @@
 ---
-title: 11ty Boilerplate
+title: Recipes
 ---
 
 <!DOCTYPE html>
@@ -9,14 +9,31 @@ title: 11ty Boilerplate
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles/screen.css">
+  <!--
+  Copilot Model: ChatGPT 4o
+  Prompt:  Include Alpine.js, Alpine Fetch, and Tailwind in the head of your main HTML page
+  Output: Gave me the next three lines of code
+  -->
+  <!--
+  Copilot Model: Claude 3.5 Sonnet
+  Prompts: (There were some error in the terminal that I had to fix when I did npx @11ty/eleventy --serve)
+  Output: Added some styling to the body
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@alpinejs/fetch@1.0.0/dist/cdn.min.js" defer></script>
 </head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="/" title="Go home">Home</a></li>
-      <li><a href="/about/" title="About the boilerplate">About</a></li>
-    </ul>
+<body class="bg-background">
+  <nav class="mb-8" style="background-color: #EDE0D4; border-bottom: 2px solid #DDB892;">
+    <div class="container mx-auto px-4">
+      <ul class="flex space-x-6 py-4">
+        <li><a href="/" class="hover:text-secondary" style="color: #7F5539;" title="Recipes">Recipes</a></li>
+        <li><a href="/about/" class="hover:text-secondary" style="color: #7F5539;" title="AI Tool Effectiveness">AI Tool Effectiveness</a></li>
+      </ul>
+    </div>
   </nav>
+  <main class="container mx-auto px-4"> 
     {{ content }}
+  </main>
 </body>
 </html>
